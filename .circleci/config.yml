@@ -1,0 +1,19 @@
+version: 2.1
+
+orbs:
+  ruby: circleci/ruby@1.8.0
+jobs:
+  build:
+    docker:
+      - image: cimg/base:stable
+    steps:
+      - checkout
+      # Add step below to install Ruby version 2.6.3
+      - ruby/install:
+          version: '2.6.3'     
+      - run: ruby -v
+
+workflows:
+  run-jobs:
+    jobs:
+      - build

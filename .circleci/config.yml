@@ -4,8 +4,8 @@ orbs:
   ruby: circleci/ruby@1.8.0
 jobs:
   build:
-    docker:
-      - image: cimg/base:stable
+    machine: # executor type
+      - image: ubuntu-2004:202010-01
     steps:
       - checkout
       # Add step below to install Ruby version 2.6.3
